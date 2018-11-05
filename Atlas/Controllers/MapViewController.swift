@@ -11,6 +11,7 @@ import MapboxDirections
 import MapboxCoreNavigation
 import MapboxNavigation
 import MapboxGeocoder
+import SideMenu
 
 class MapViewController: UIViewController, MGLMapViewDelegate, StartNavigationViewDelegate, NavigationViewControllerDelegate, UISearchBarDelegate {
 
@@ -24,6 +25,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate, StartNavigationVi
         super.viewDidLoad()
         addMap()
         addSearchBar()
+        addSideMenu()
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(didLongPress(_:)))
         longPress.minimumPressDuration = 0.3
         mapView.addGestureRecognizer(longPress)
@@ -66,6 +68,21 @@ class MapViewController: UIViewController, MGLMapViewDelegate, StartNavigationVi
         searchBar.placeholder = "Search here"
         searchBar.addBorder(color: nil, width: nil, cornerRadius: 10)
         view.addSubview(searchBar)
+    }
+    
+    private func addSideMenu() {
+        // TODO: bug fix here - sometimes blackscreen appears when toggle the side menu
+        let vc = SideMenuViewController()
+        let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: vc)
+        menuLeftNavigationController.leftSide = true
+        SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
+        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: mapView)
+        SideMenuManager.default.menuFadeStatusBar = false
+        SideMenuManager.default.menuPresentMode = .viewSlideInOut
+        SideMenuManager.default.menuLeftNavigationController?.isNavigationBarHidden = true
+        SideMenuManager.default.menuWidth = 280
+        SideMenuManager.default.menuShadowOpacity = 0.3
+        SideMenuManager.default.menuShadowRadius = 3
     }
     
     private func addStartNavigationView() {

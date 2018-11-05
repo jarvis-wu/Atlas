@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		461C5D4B218DEE83004E9966 /* NavigationRouteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461C5D4A218DEE83004E9966 /* NavigationRouteInfo.swift */; };
+		461C5D4F218FE74A004E9966 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461C5D4D218FE74A004E9966 /* SideMenuViewController.swift */; };
+		461C5D50218FE74A004E9966 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 461C5D4E218FE74A004E9966 /* SideMenuViewController.xib */; };
 		466C9AC72187B84F00359501 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C9AC62187B84F00359501 /* AppDelegate.swift */; };
 		466C9AC92187B84F00359501 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C9AC82187B84F00359501 /* MapViewController.swift */; };
 		466C9ACE2187B85100359501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 466C9ACD2187B85100359501 /* Assets.xcassets */; };
@@ -15,12 +17,16 @@
 		466C9ADA218A4CCB00359501 /* StartNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C9AD9218A4CCA00359501 /* StartNavigationView.swift */; };
 		466C9ADD218B9D9300359501 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C9ADC218B9D9300359501 /* Extension.swift */; };
 		466C9ADF218BA51500359501 /* StartNavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 466C9ADE218BA51500359501 /* StartNavigationView.xib */; };
+		46BA50372190728D0079BD11 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BA50352190728D0079BD11 /* SideMenuTableViewCell.swift */; };
+		46BA50382190728D0079BD11 /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46BA50362190728D0079BD11 /* SideMenuTableViewCell.xib */; };
 		6E592975B1F97561AD312ECF /* Pods_Atlas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39020CA98C7A9D4CC3D27932 /* Pods_Atlas.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		39020CA98C7A9D4CC3D27932 /* Pods_Atlas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Atlas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		461C5D4A218DEE83004E9966 /* NavigationRouteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouteInfo.swift; sourceTree = "<group>"; };
+		461C5D4D218FE74A004E9966 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		461C5D4E218FE74A004E9966 /* SideMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
 		466C9AC32187B84F00359501 /* Atlas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atlas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		466C9AC62187B84F00359501 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		466C9AC82187B84F00359501 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +36,8 @@
 		466C9AD9218A4CCA00359501 /* StartNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNavigationView.swift; sourceTree = "<group>"; };
 		466C9ADC218B9D9300359501 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		466C9ADE218BA51500359501 /* StartNavigationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartNavigationView.xib; sourceTree = "<group>"; };
+		46BA50352190728D0079BD11 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		46BA50362190728D0079BD11 /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
 		94EEA989E557C942D4A29E3D /* Pods-Atlas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Atlas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Atlas/Pods-Atlas.debug.xcconfig"; sourceTree = "<group>"; };
 		C9C4639E022F325A2D585D4C /* Pods-Atlas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Atlas.release.xcconfig"; path = "Pods/Target Support Files/Pods-Atlas/Pods-Atlas.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				466C9AC82187B84F00359501 /* MapViewController.swift */,
+				461C5D4D218FE74A004E9966 /* SideMenuViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -96,7 +105,10 @@
 			isa = PBXGroup;
 			children = (
 				466C9AD9218A4CCA00359501 /* StartNavigationView.swift */,
+				46BA50352190728D0079BD11 /* SideMenuTableViewCell.swift */,
+				46BA50362190728D0079BD11 /* SideMenuTableViewCell.xib */,
 				466C9ADE218BA51500359501 /* StartNavigationView.xib */,
+				461C5D4E218FE74A004E9966 /* SideMenuViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,6 +205,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				461C5D50218FE74A004E9966 /* SideMenuViewController.xib in Resources */,
+				46BA50382190728D0079BD11 /* SideMenuTableViewCell.xib in Resources */,
 				466C9AD12187B85100359501 /* LaunchScreen.storyboard in Resources */,
 				466C9ADF218BA51500359501 /* StartNavigationView.xib in Resources */,
 				466C9ACE2187B85100359501 /* Assets.xcassets in Resources */,
@@ -244,6 +258,7 @@
 				"${PODS_ROOT}/MapboxNavigationNative/MapboxNavigationNative.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/MapboxSpeech/MapboxSpeech.framework",
 				"${BUILT_PRODUCTS_DIR}/Polyline/Polyline.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Solar/Solar.framework",
 				"${BUILT_PRODUCTS_DIR}/Turf/Turf.framework",
 			);
@@ -262,6 +277,7 @@
 				"${DWARF_DSYM_FOLDER_PATH}/MapboxNavigationNative.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxSpeech.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Polyline.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Solar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Turf.framework",
 			);
@@ -281,6 +297,8 @@
 				466C9AC92187B84F00359501 /* MapViewController.swift in Sources */,
 				466C9ADA218A4CCB00359501 /* StartNavigationView.swift in Sources */,
 				466C9AC72187B84F00359501 /* AppDelegate.swift in Sources */,
+				46BA50372190728D0079BD11 /* SideMenuTableViewCell.swift in Sources */,
+				461C5D4F218FE74A004E9966 /* SideMenuViewController.swift in Sources */,
 				466C9ADD218B9D9300359501 /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

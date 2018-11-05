@@ -9,5 +9,6 @@ target 'Atlas' do
   pod 'Mapbox-iOS-SDK', '~> 4.5'
   pod 'MapboxNavigation', '~> 0.22.0'
   pod 'MapboxGeocoder.swift', '~> 0.10'
+  pod 'SideMenu'
 
 end
