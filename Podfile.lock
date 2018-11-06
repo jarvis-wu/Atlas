@@ -17,6 +17,7 @@ PODS:
   - MapboxNavigationNative (3.2.0)
   - MapboxSpeech (0.0.2)
   - Polyline (4.2.0)
+  - PPBadgeViewSwift (2.2.2)
   - SideMenu (5.0.2)
   - Solar (2.1.0)
   - Turf (0.2.1)
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - Mapbox-iOS-SDK (~> 4.5)
   - MapboxGeocoder.swift (~> 0.10)
   - MapboxNavigation (~> 0.22.0)
+  - PPBadgeViewSwift
   - SideMenu
 
 SPEC REPOS:
@@ -38,6 +40,7 @@ SPEC REPOS:
     - MapboxNavigationNative
     - MapboxSpeech
     - Polyline
+    - PPBadgeViewSwift
     - SideMenu
     - Solar
     - Turf
@@ -52,10 +55,11 @@ SPEC CHECKSUMS:
   MapboxNavigationNative: 1173dc73d6643e321065cfaa55d253f67b55ab12
   MapboxSpeech: 9d46bca4d7e96318ec8d6ce93a1153ebaef319ba
   Polyline: 3d69f75bb136357e27291d439d0436c6ebda57a4
+  PPBadgeViewSwift: 96a41852df7437e9d948565a1bc894f757c29933
   SideMenu: e5094f0b2e7d9609e100a90ae69025abd994f882
   Solar: 2dc6e7cc39186cb0c8228fa08df76fb50c7d8f24
   Turf: 9763a5a2d7da05dfdd5ed56aeb0414b291b0fee1
 
-PODFILE CHECKSUM: 9661b10368938ea1c55f83022a87494cd2bdee7a
+PODFILE CHECKSUM: f2fa000f92222d91edba61db18452a73959a714b
 
 COCOAPODS: 1.5.3

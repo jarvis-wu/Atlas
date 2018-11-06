@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PPBadgeViewSwift
 
 class SideMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -32,6 +33,14 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "SideMenuTableViewCell") as! SideMenuTableViewCell
         cell.iconImageView.image = UIImage(named: data[indexPath.row].1)
         cell.label.text = data[indexPath.row].0
+        // TODO: add badges to cell to indicate notifications, hardcoded now for demonstration
+        if indexPath.row == 3 {
+            cell.pp.addDot(color: UIColor.red)
+            cell.pp.moveBadge(x: -25, y: 35)
+        } else if indexPath.row == 6 {
+            cell.pp.addDot(color: UIColor.red)
+            cell.pp.moveBadge(x: -25, y: 35)
+        }
         return cell
     }
     
@@ -46,6 +55,16 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
     
     private func setupUI() {
         // nothing
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath.row {
+        case 1:
+            self.dismiss(animated: true, completion: nil)
+        default:
+            print("Table view cell is selected at \(indexPath)")
+        }
     }
 
 }

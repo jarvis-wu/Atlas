@@ -10,5 +10,6 @@ target 'Atlas' do
   pod 'MapboxNavigation', '~> 0.22.0'
   pod 'MapboxGeocoder.swift', '~> 0.10'
   pod 'SideMenu'
+  pod 'PPBadgeViewSwift'
 
 end
