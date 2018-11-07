@@ -47,6 +47,7 @@ class StartNavigationView: UIView {
         initialFrame = frame
         yTotalTranslation = UIScreen.main.bounds.height - initialFrame.origin.y
         setupContentView()
+        setupLabels()
         setupDragIndicator()
         setupBeginNavigationButton()
     }
@@ -57,6 +58,9 @@ class StartNavigationView: UIView {
         contentView.addBorder(color: nil, width: nil, cornerRadius: 35)
         contentView.addShadow(color: UIColor.lightGray, radius: 5, opacity: 0.3, offset: CGSize.zero)
         addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(panned)))
+    }
+    
+    private func setupLabels() {
         destinationTitleLabel.minimumScaleFactor = 20 / destinationTitleLabel.font.pointSize
         destinationTitleLabel.adjustsFontSizeToFitWidth = true
     }

@@ -26,13 +26,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Union Station" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sul-XW-Wzm">
-                    <rect key="frame" x="20" y="50.666666666666664" width="305" height="28.666666666666664"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <rect key="frame" x="93.333333333333329" y="40" width="158.33333333333337" height="30"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toronto, ON M5J 1E6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pD-aN-Qge">
-                    <rect key="frame" x="86.666666666666686" y="87.333333333333329" width="172" height="21.666666666666671"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toronto, ON M5J 1E6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pD-aN-Qge">
+                    <rect key="frame" x="86.666666666666686" y="75" width="172" height="21.666666666666671"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -51,7 +51,7 @@
                     <color key="backgroundColor" white="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="16O-jN-ctM">
-                    <rect key="frame" x="120.66666666666669" y="123.99999999999999" width="104" height="36.333333333333329"/>
+                    <rect key="frame" x="120.66666666666669" y="114.99999999999999" width="104" height="36.333333333333329"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance: 122 km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xD-Mn-yRW">
                             <rect key="frame" x="0.0" y="0.0" width="104" height="15.666666666666666"/>
@@ -70,13 +70,12 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="7pD-aN-Qge" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="94L-Pb-sHo"/>
+                <constraint firstItem="16O-jN-ctM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="115" id="Emz-Ap-Sw0"/>
+                <constraint firstItem="sul-XW-Wzm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="40" id="Fxn-7w-6SF"/>
                 <constraint firstItem="16O-jN-ctM" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Ieh-iu-ubm"/>
-                <constraint firstItem="sul-XW-Wzm" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" multiplier="0.5" id="LqD-ER-fNE"/>
-                <constraint firstItem="sul-XW-Wzm" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Pfs-Xf-Y6x"/>
-                <constraint firstItem="sul-XW-Wzm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="QGl-fu-yeE"/>
-                <constraint firstItem="16O-jN-ctM" firstAttribute="top" secondItem="7pD-aN-Qge" secondAttribute="bottom" constant="15" id="Zok-F8-DET"/>
-                <constraint firstItem="7pD-aN-Qge" firstAttribute="centerX" secondItem="sul-XW-Wzm" secondAttribute="centerX" id="bSt-mU-u1U"/>
-                <constraint firstItem="7pD-aN-Qge" firstAttribute="top" secondItem="sul-XW-Wzm" secondAttribute="bottom" constant="8" id="eeV-Zo-gZ6"/>
+                <constraint firstItem="7pD-aN-Qge" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="75" id="dzN-BD-Zju"/>
+                <constraint firstItem="sul-XW-Wzm" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="vbQ-Hj-tNT"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

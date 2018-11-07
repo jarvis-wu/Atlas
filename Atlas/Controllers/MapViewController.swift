@@ -48,6 +48,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate, StartNavigationVi
         mapView.setUserTrackingMode(.follow, animated: true)
         mapView.logoView.transform = CGAffineTransform(translationX: 15, y: 15)
         mapView.attributionButton.transform = CGAffineTransform(translationX: -15, y: 15)
+        mapView.attributionButton.tintColor = .lightGray
         // TODO: this probably needs to be replaced as it interferes with other gestures in map view
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapOnMap))
         mapView.addGestureRecognizer(tap)
@@ -71,12 +72,11 @@ class MapViewController: UIViewController, MGLMapViewDelegate, StartNavigationVi
     }
     
     private func addSideMenu() {
-        // TODO: bug fix here - sometimes blackscreen appears when toggle the side menu
         let vc = SideMenuViewController()
         let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: vc)
         menuLeftNavigationController.leftSide = true
         SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
-        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: mapView)
+        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: mapView, forMenu: UIRectEdge.left)
         SideMenuManager.default.menuFadeStatusBar = false
         SideMenuManager.default.menuPresentMode = .viewSlideInOut
         SideMenuManager.default.menuLeftNavigationController?.isNavigationBarHidden = true
@@ -86,13 +86,10 @@ class MapViewController: UIViewController, MGLMapViewDelegate, StartNavigationVi
     }
     
     private func addStartNavigationView() {
-        // TODO: Bug to fix - sometimes the new view is also dismissed after old card is dismissed
         if startNavigationView != nil {
             UIView.animate(withDuration: 0.3, animations: {
                 self.startNavigationView.transform = CGAffineTransform(translationX: 0, y: 240)
-            }) { (completed) in
-                self.startNavigationView.removeFromSuperview()
-            }
+            })
         }
         let frame = CGRect(x: 15, y: UIScreen.main.bounds.height - 240, width: view.frame.width - 30, height: 220)
         decodeLocation(from: directionsRoute?.routeOptions.waypoints.last?.coordinate) { (main, secondary) in
@@ -101,7 +98,9 @@ class MapViewController: UIViewController, MGLMapViewDelegate, StartNavigationVi
             self.startNavigationView = StartNavigationView(in: frame, withInfo: routeInfo)
             self.startNavigationView.transform = CGAffineTransform(translationX: 0, y: 240)
             self.startNavigationView.delegate = self
-            self.view.addSubview(self.startNavigationView)
+            if self.startNavigationView.superview != self.view {
+                self.view.addSubview(self.startNavigationView)
+            }
             UIView.animate(withDuration: 0.3) {
                 self.startNavigationView.transform = CGAffineTransform.identity
             }
@@ -214,6 +213,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate, StartNavigationVi
             mapView.style?.removeLayer(layer)
             mapView.style?.removeSource(source)
             mapView.removeAnnotation(annotation)
+            searchBar.text = ""
         }
     }
     
