@@ -1,4 +1,59 @@
 PODS:
+  - Firebase/Auth (5.11.0):
+    - Firebase/CoreOnly
+    - FirebaseAuth (= 5.0.4)
+  - Firebase/Core (5.11.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 5.3.0)
+  - Firebase/CoreOnly (5.11.0):
+    - FirebaseCore (= 5.1.6)
+  - FirebaseAnalytics (5.3.0):
+    - FirebaseCore (~> 5.1)
+    - FirebaseInstanceID (~> 3.3)
+    - GoogleAppMeasurement (~> 5.3)
+    - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
+    - GoogleUtilities/MethodSwizzler (~> 5.2)
+    - GoogleUtilities/Network (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
+    - nanopb (~> 0.3)
+  - FirebaseAuth (5.0.4):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 5.0)
+    - GoogleUtilities/Environment (~> 5.2)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseAuthInterop (1.0.0)
+  - FirebaseCore (5.1.6):
+    - GoogleUtilities/Logger (~> 5.2)
+  - FirebaseInstanceID (3.3.0):
+    - FirebaseCore (~> 5.1)
+    - GoogleUtilities/Environment (~> 5.3)
+    - GoogleUtilities/UserDefaults (~> 5.3)
+  - GoogleAppMeasurement (5.3.0):
+    - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
+    - GoogleUtilities/MethodSwizzler (~> 5.2)
+    - GoogleUtilities/Network (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
+    - nanopb (~> 0.3)
+  - GoogleUtilities/AppDelegateSwizzler (5.3.4):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (5.3.4)
+  - GoogleUtilities/Logger (5.3.4):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (5.3.4):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (5.3.4):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (5.3.4)"
+  - GoogleUtilities/Reachability (5.3.4):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (5.3.4):
+    - GoogleUtilities/Logger
+  - GTMSessionFetcher/Core (1.2.0)
+  - IQKeyboardManagerSwift (6.2.0)
   - Mapbox-iOS-SDK (4.5.0)
   - MapboxCoreNavigation (0.22.3):
     - MapboxDirections.swift (~> 0.24.0)
@@ -16,21 +71,41 @@ PODS:
     - Solar (~> 2.1)
   - MapboxNavigationNative (3.2.0)
   - MapboxSpeech (0.0.2)
+  - nanopb (0.3.901):
+    - nanopb/decode (= 0.3.901)
+    - nanopb/encode (= 0.3.901)
+  - nanopb/decode (0.3.901)
+  - nanopb/encode (0.3.901)
   - Polyline (4.2.0)
   - PPBadgeViewSwift (2.2.2)
   - SideMenu (5.0.2)
+  - SkyFloatingLabelTextField (3.6.0)
   - Solar (2.1.0)
   - Turf (0.2.1)
 
 DEPENDENCIES:
+  - Firebase/Auth
+  - Firebase/Core
+  - IQKeyboardManagerSwift
   - Mapbox-iOS-SDK (~> 4.5)
   - MapboxGeocoder.swift (~> 0.10)
   - MapboxNavigation (~> 0.22.0)
   - PPBadgeViewSwift
   - SideMenu
+  - SkyFloatingLabelTextField (~> 3.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseAuth
+    - FirebaseAuthInterop
+    - FirebaseCore
+    - FirebaseInstanceID
+    - GoogleAppMeasurement
+    - GoogleUtilities
+    - GTMSessionFetcher
+    - IQKeyboardManagerSwift
     - Mapbox-iOS-SDK
     - MapboxCoreNavigation
     - MapboxDirections.swift
@@ -39,13 +114,25 @@ SPEC REPOS:
     - MapboxNavigation
     - MapboxNavigationNative
     - MapboxSpeech
+    - nanopb
     - Polyline
     - PPBadgeViewSwift
     - SideMenu
+    - SkyFloatingLabelTextField
     - Solar
     - Turf
 
 SPEC CHECKSUMS:
+  Firebase: b48f9e653da971ecce5b8c749684bc8bb2d26bd3
+  FirebaseAnalytics: 63202d2665de4e6adcbdce189135255d8b5962ba
+  FirebaseAuth: 504b198ceb3472dca5c65bb95544ea44cfc9439e
+  FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
+  FirebaseCore: d16552f06821489ce1affe2e5e3e5593402ddfe3
+  FirebaseInstanceID: e2fa4cb35ef5558c200f7f0ad8a53e212215f93e
+  GoogleAppMeasurement: 5029d78f2b438bd30ffb44e6c558b57c21622727
+  GoogleUtilities: abb092d2c12e817fa3e0e7b274987dd72fb86ec3
+  GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
+  IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   Mapbox-iOS-SDK: fb9dde66106a8f10d351f9697ac198049c8e5511
   MapboxCoreNavigation: 37bc80cf060d5c35f1fda7f0a53fb79fb188d930
   MapboxDirections.swift: 25ea07ca06a3c64c335dc8852f3c94fcabd443c8
@@ -54,12 +141,14 @@ SPEC CHECKSUMS:
   MapboxNavigation: 92db4c3d3ab691c320d0bc65ecf80dc864ef9a1e
   MapboxNavigationNative: 1173dc73d6643e321065cfaa55d253f67b55ab12
   MapboxSpeech: 9d46bca4d7e96318ec8d6ce93a1153ebaef319ba
+  nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Polyline: 3d69f75bb136357e27291d439d0436c6ebda57a4
   PPBadgeViewSwift: 96a41852df7437e9d948565a1bc894f757c29933
   SideMenu: e5094f0b2e7d9609e100a90ae69025abd994f882
+  SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
   Solar: 2dc6e7cc39186cb0c8228fa08df76fb50c7d8f24
   Turf: 9763a5a2d7da05dfdd5ed56aeb0414b291b0fee1
 
-PODFILE CHECKSUM: f2fa000f92222d91edba61db18452a73959a714b
+PODFILE CHECKSUM: 66c276b4b6d7ae78d542ca282e79b976bcd64fbb
 
 COCOAPODS: 1.5.3
