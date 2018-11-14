@@ -7,6 +7,11 @@
 
 import UIKit
 import PPBadgeViewSwift
+import FirebaseAuth
+
+protocol SideMenuDelegate {
+    func userDidSignOut()
+}
 
 class SideMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -16,6 +21,8 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var footerView: UIView!
+    
+    var delegate: SideMenuDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +69,21 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         switch indexPath.row {
         case 1:
             self.dismiss(animated: true, completion: nil)
+        // TODO: this is for testing
+        case 5:
+            let alertController = UIAlertController(title: "Do you want to log out?", message: nil, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+                do {
+                    try Auth.auth().signOut()
+                    self.dismiss(animated: true, completion: {
+                        self.delegate.userDidSignOut()
+                    })
+                } catch let signOutError as NSError {
+                    print ("Error signing out: %@", signOutError)
+                }
+            }))
+            alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            present(alertController, animated: true)
         default:
             print("Table view cell is selected at \(indexPath)")
         }

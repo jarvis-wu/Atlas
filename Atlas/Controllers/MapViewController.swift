@@ -13,7 +13,7 @@ import MapboxNavigation
 import MapboxGeocoder
 import SideMenu
 
-class MapViewController: UIViewController, MGLMapViewDelegate, StartNavigationViewDelegate, NavigationViewControllerDelegate, UISearchBarDelegate {
+class MapViewController: UIViewController, MGLMapViewDelegate, StartNavigationViewDelegate, NavigationViewControllerDelegate, UISearchBarDelegate, SideMenuDelegate {
 
     var mapView: NavigationMapView!
     var directionsRoute: Route?
@@ -49,6 +49,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate, StartNavigationVi
         mapView.logoView.transform = CGAffineTransform(translationX: 15, y: 15)
         mapView.attributionButton.transform = CGAffineTransform(translationX: -15, y: 15)
         mapView.attributionButton.tintColor = .lightGray
+        mapView.tintColor = UIColor(named: "theme-blue")
         // TODO: this probably needs to be replaced as it interferes with other gestures in map view
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapOnMap))
         mapView.addGestureRecognizer(tap)
@@ -73,6 +74,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate, StartNavigationVi
     
     private func addSideMenu() {
         let vc = SideMenuViewController()
+        vc.delegate = self
         let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: vc)
         menuLeftNavigationController.leftSide = true
         SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
@@ -162,7 +164,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate, StartNavigationVi
             let source = MGLShapeSource(identifier: "route-source", features: [polyline], options: nil)
             // Customize the route line color and width
             let lineStyle = MGLLineStyleLayer(identifier: "route-style", source: source)
-            lineStyle.lineColor = NSExpression(forConstantValue: #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1))
+            lineStyle.lineColor = NSExpression(forConstantValue: #colorLiteral(red: 0, green: 0.4, blue: 0.8392156863, alpha: 1))
             lineStyle.lineWidth = NSExpression(forConstantValue: 5)
             // Add the source and style layer of the route line to the map
             mapView.style?.addSource(source)
@@ -260,7 +262,10 @@ class MapViewController: UIViewController, MGLMapViewDelegate, StartNavigationVi
             print(formatter.string(from: placemark.postalAddress!))
         }
     }
-
+    
+    func userDidSignOut() {
+        dismiss(animated: true, completion: nil)
+    }
 
 }
 

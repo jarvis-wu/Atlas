@@ -11,5 +11,9 @@ target 'Atlas' do
   pod 'MapboxGeocoder.swift', '~> 0.10'
   pod 'SideMenu'
   pod 'PPBadgeViewSwift'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'IQKeyboardManagerSwift'
+  pod 'SkyFloatingLabelTextField', '~> 3.0'
 
 end
